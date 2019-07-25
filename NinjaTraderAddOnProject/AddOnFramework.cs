@@ -20,7 +20,7 @@ using NinjaTrader.Cbi;
 using NinjaTrader.Data;
 using NinjaTrader.Gui.Tools;
 using NinjaTrader.NinjaScript;
-using NinjaTraderAddOnProject;
+using NT8ZorroBridge;
 #endregion
 
 //This namespace holds GUI items and is required.
@@ -114,7 +114,7 @@ namespace NinjaTrader.Gui.NinjaScript
 		// INTTabFactory member. Required to create tabs
 		public NTTabPage CreateTabPage(string typeName, bool isTrue)
 		{
-			return new NinjaTraderAddOnProject.AddOnPage();
+			return new AddOnPage();
 		}
 	}
 
@@ -146,7 +146,7 @@ namespace NinjaTrader.Gui.NinjaScript
 
 			/* In order to have link buttons functionality, tab control items must be derived from Tools.NTTabPage
             They can be added using extention method AddNTTabPage(NTTabPage page) */
-			tc.AddNTTabPage(new NinjaTraderAddOnProject.AddOnPage());
+			tc.AddNTTabPage(new AddOnPage());
 
 			// WorkspaceOptions property must be set
 			Loaded += (o, e) =>

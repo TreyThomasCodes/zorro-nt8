@@ -6,7 +6,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NinjaTraderAddOnProject
+namespace NT8ZorroBridge
 {
     [ServiceContract]
     public interface IZorroService

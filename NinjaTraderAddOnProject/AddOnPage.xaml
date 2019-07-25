@@ -5,7 +5,7 @@
 		xmlns:TradePerformance="clr-namespace:NinjaTrader.Gui.TradePerformance;assembly=NinjaTrader.Gui" 
 		xmlns:AccountData="clr-namespace:NinjaTrader.Gui.AccountData;assembly=NinjaTrader.Gui" 
 		xmlns:AtmStrategy="clr-namespace:NinjaTrader.Gui.NinjaScript.AtmStrategy;assembly=NinjaTrader.Gui"
-        x:Class="NinjaTraderAddOnProject.AddOnPage" >
+        x:Class="NT8ZorroBridge.AddOnPage" >
     <Grid Background="Transparent">
         <!-- Define our layout as two columns. Left side will be all of our controls. Right side will be our output box -->
         <Grid.ColumnDefinitions>

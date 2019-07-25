@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NinjaTraderAddOnProject")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("NT8ZorroBridge")]
+[assembly: AssemblyDescription("WCF and control panel for NT8<->Zorro communication")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NinjaTraderAddOnProject")]
+[assembly: AssemblyCompany("TreyThomasCodes")]
+[assembly: AssemblyProduct("NT8ZorroBridge")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

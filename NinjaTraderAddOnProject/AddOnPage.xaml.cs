@@ -20,7 +20,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Xml.Linq;
 
-namespace NinjaTraderAddOnProject
+namespace NT8ZorroBridge
 {
 	/// <summary>
 	/// Interaction logic for Page1.xaml
