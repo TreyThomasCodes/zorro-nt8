@@ -12,4 +12,19 @@ namespace NT8
 		(FARPROC&)BrokerProgress = fpProgress;
 		return PLUGIN_VERSION;
 	}
+
+	DLLFUNC_C void BrokerHTTP(FARPROC fpSend, FARPROC fpStatus, FARPROC fpResult, FARPROC fpFree)
+	{
+	}
+
+	DLLFUNC_C int BrokerLogin(char* User, char* Pwd, char* Type, char* Account)
+	{
+		return 0;
+	}
+
+	DLLFUNC_C int BrokerTime(DATE* pTimeGMT)
+	{
+		return 0;
+	}
+	
 }
