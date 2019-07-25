@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.ServiceModel;
 using System.ServiceModel.Description;
+using System.ServiceModel.Web;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,7 +32,7 @@ namespace NinjaTrader.Gui.NinjaScript
 		private NTMenuItem addOnFrameworkMenuItem;
 		private NTMenuItem existingMenuItemInControlCenter;
 
-        private ServiceHost host = new ServiceHost(typeof(ZorroServiceImpl), new Uri("http://localhost:9999/hello"));
+        private readonly WebServiceHost host = new WebServiceHost(typeof(ZorroServiceImpl), new Uri("http://localhost:9999/"));
 
 		// Same as other NS objects. However there's a difference: this event could be called in any thread
 		protected override void OnStateChange()
@@ -41,10 +42,12 @@ namespace NinjaTrader.Gui.NinjaScript
 				Description = "Example AddOn demonstrating some of the framework's capabilities";
 				Name = "AddOn Framework";
 
-                ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
-                smb.HttpGetEnabled = true;
-                smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
-                host.Description.Behaviors.Add(smb);
+                //ServiceMetadataBehavior smb = new ServiceMetadataBehavior
+                //{
+                //    HttpGetEnabled = true
+                //};
+                //smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
+                //host.Description.Behaviors.Add(smb);
 
                 host.Open();
 			}
