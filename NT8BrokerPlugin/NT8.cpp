@@ -15,6 +15,11 @@ namespace NT8
 
 	DLLFUNC_C void BrokerHTTP(FARPROC fpSend, FARPROC fpStatus, FARPROC fpResult, FARPROC fpFree)
 	{
+		(FARPROC&)http_send = fpSend;
+		(FARPROC&)http_status = fpStatus;
+		(FARPROC&)http_result = fpResult;
+		(FARPROC&)http_free = fpFree;
+		return;
 	}
 
 	DLLFUNC_C int BrokerLogin(char* User, char* Pwd, char* Type, char* Account)
