@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using System.ServiceModel;
+using System.ServiceModel.Description;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,6 +19,7 @@ using NinjaTrader.Cbi;
 using NinjaTrader.Data;
 using NinjaTrader.Gui.Tools;
 using NinjaTrader.NinjaScript;
+using NinjaTraderAddOnProject;
 #endregion
 
 //This namespace holds GUI items and is required.
@@ -28,6 +31,8 @@ namespace NinjaTrader.Gui.NinjaScript
 		private NTMenuItem addOnFrameworkMenuItem;
 		private NTMenuItem existingMenuItemInControlCenter;
 
+        private ServiceHost host = new ServiceHost(typeof(ZorroServiceImpl), new Uri("http://localhost:9999/hello"));
+
 		// Same as other NS objects. However there's a difference: this event could be called in any thread
 		protected override void OnStateChange()
 		{
@@ -35,7 +40,18 @@ namespace NinjaTrader.Gui.NinjaScript
 			{
 				Description = "Example AddOn demonstrating some of the framework's capabilities";
 				Name = "AddOn Framework";
+
+                ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
+                smb.HttpGetEnabled = true;
+                smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
+                host.Description.Behaviors.Add(smb);
+
+                host.Open();
 			}
+            else if (State == State.Terminated)
+            {
+                host.Close();
+            }
 		}
 
 		// Will be called as a new NTWindow is created. It will be called in the thread of that window
