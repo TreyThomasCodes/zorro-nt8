@@ -66,6 +66,7 @@
     <Compile Include="AddOnPage.xaml.cs">
       <DependentUpon>AddOnPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConnectionStatus.cs" />
     <Compile Include="IZorroService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -42,13 +42,6 @@ namespace NinjaTrader.Gui.NinjaScript
 				Description = "Example AddOn demonstrating some of the framework's capabilities";
 				Name = "AddOn Framework";
 
-                //ServiceMetadataBehavior smb = new ServiceMetadataBehavior
-                //{
-                //    HttpGetEnabled = true
-                //};
-                //smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
-                //host.Description.Behaviors.Add(smb);
-
                 host.Open();
 			}
             else if (State == State.Terminated)
@@ -114,7 +107,7 @@ namespace NinjaTrader.Gui.NinjaScript
 		// INTTabFactory member. Required to create tabs
 		public NTTabPage CreateTabPage(string typeName, bool isTrue)
 		{
-			return new AddOnPage();
+			return new NT8ZorroBridge.AddOnPage();
 		}
 	}
 
@@ -146,7 +139,7 @@ namespace NinjaTrader.Gui.NinjaScript
 
 			/* In order to have link buttons functionality, tab control items must be derived from Tools.NTTabPage
             They can be added using extention method AddNTTabPage(NTTabPage page) */
-			tc.AddNTTabPage(new AddOnPage());
+			tc.AddNTTabPage(new NT8ZorroBridge.AddOnPage());
 
 			// WorkspaceOptions property must be set
 			Loaded += (o, e) =>
